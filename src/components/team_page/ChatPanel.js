@@ -23,7 +23,7 @@ const ChatPanel = ({ teamId }) => {
     const { data, status } = useQuery('username', getUsername)
     const onSubmit = e => {
         e.preventDefault()
-        socket.emit('send-message', { username: data, message: msg, teamId })
+        messages.push({ username: data, message: msg, teamId })
         e.target.reset()
     }
     return (
