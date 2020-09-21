@@ -1,13 +1,168 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.password-visibility-icon {
+  right: 10px;
+  top: 1.3rem;
+}
+
+.desktop-nav-header {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+.desktop-logout-btn {
+  position: absolute;
+  right: 10rem;
+  top: 12px;
+  transition: all 200ms
+}
+
+/* .desktop-logout-btn:hover {
+  background-color: rgba(98, 98, 98, 0.4);
+} */
+
+.auth-loader::before {
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.join-team-modal {
+  position: fixed;
+  top: 20%;
+  left: 13%;
+  transform: translate(-50%, -80%);
+  background-color: #FFFFFF;
+  z-index: 1000;
+}
+
+.my-teams-text {
+  top: 2rem;
+}
+
+.online-dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 45px;
+}
+
+.auth-input-group>input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.342);
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 200ms ease;
+  padding-top: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+.auth-input-group>input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(98, 0, 255)
+}
+
+.auth-input-group>label {
+  position: absolute;
+  font-size: 20px;
+  bottom: 5px;
+  left: 10px;
+  display: block;
+  transition: all 200ms ease-in-out;
+}
+
+.auth-input-group>input:focus+label, .auth-input-group>:valid+label {
+  font-size: 14px;
+  transform: translateY(-23px);
+}
+
+.chat-input {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.342);
+  transition: all 200ms ease-in-out;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(98, 0, 255)
+}
+
+.image-carousel {
+  height: 14rem;
+}
+
+.left-arrow {
+  top: 3rem;
+  left: 2rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .auth-loader::before {
+    left: 49%;
+  }
+  .join-team-modal {
+    top: 20%;
+    left: 25%;
+  }
+  .my-teams-text {
+    top: 5rem;
+  }
+  .online-dot {
+    left: 10rem;
+  }
+
+  .image-carousel {
+    height: 26rem;
+  }
+
+  .left-arrow {
+    top: 10rem;
+    left: 5rem;
+  }
+
+  .right-arrow {
+    top: 10rem;
+    right: 5rem;
+  }
+
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
